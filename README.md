@@ -12,7 +12,7 @@ I used a search of "blue 4 person tent waterproof" as my test case. This is some
 
 </br>
 
-<h4>Table of Contents</h4>
+### Table of Contents
 [Data Acquisition](#Acq)<br /> 
 [Extracting and Cleaning](#Ex+Cl)<br />
 [Exploratory Analysis](#Explore)<br />
@@ -188,13 +188,13 @@ All right, now the access to the data is all set up -- let's get into it.
 
 
 ```python
-#page1 = 'http://www.ebay.com/sch/i.html?_from=R40&_sacat=888%27&_nkw=blue+4+person+tent+waterproof&_pgn=1&_skc=50&rt=nc'
-#res = search_results(page1)
-#for i in range(2,13):
-#    page2 = 'http://www.ebay.com/sch/i.html?_from=R40&_sacat=888%27&_nkw=blue+4+person+tent+waterproof&_pgn='+str(i)+'&_skc=50&rt=nc'
-#    res2 = search_results(page2)
-#    res = concatenate((res,res2))
-#res = unique(res)
+page1 = 'http://www.ebay.com/sch/i.html?_from=R40&_sacat=888%27&_nkw=blue+4+person+tent+waterproof&_pgn=1&_skc=50&rt=nc'
+res = search_results(page1)
+for i in range(2,13):
+    page2 = 'http://www.ebay.com/sch/i.html?_from=R40&_sacat=888%27&_nkw=blue+4+person+tent+waterproof&_pgn='+str(i)+'&_skc=50&rt=nc'
+    res2 = search_results(page2)
+    res = concatenate((res,res2))
+res = unique(res)
 
 txt, views, tm, n_sold, seller_fdbk, n_watch, price = lookup_description(res, n=len(res))
 rel, length_desc = get_camping_relevance(txt)
@@ -506,7 +506,7 @@ As predicted, the seller rating has very little effect on the ranking. Again, be
 While relevance is correlated to length (clearly lengthier descriptions have more room for relevant camping vocabulary), it does not appear to affect the ranking. This is somewhat disappointing, as I was hoping this would be a indicator of appeal to the consumer, as well as a possible method by which sellers could improve their search result rankings.
 
  
-</br></br>
+</br>
 <a name="Model"/>
 ### A Brief Model
 
@@ -613,9 +613,8 @@ Xtest = df2[~msk]; ytest = DF['Rank'][~msk]
 
 ridge = Ridge(alpha=.1, normalize=True, solver='sag', tol=0.0000001)
 ridge.fit(Xtrain, pd.Series(ytrain))
-print "Ridge model:", ridge.coef_, '\n'#, ridge.intercept_, ridge.score
+print "Ridge model:", ridge.coef_
 
-#predd = ridge.predict(Xtest)
 print 'R^2 Value:', ridge.score(Xtest, ytest), '\n'
 print 'Predicted Rankings:', [int(i) for i in ridge.predict(Xtest)]
 print 'Actual Rankings:', list(ytest)
@@ -645,7 +644,7 @@ xlabel('Predicted Rank'); ylabel('Actual Rank')
 </br>
  
 
-The model is, sadly, quite awful. It has some *relative* predictive power, but little in the way of *absolute* predictive power. Of course, this is fairly unsurprising considering the initial assessment showing little correlation.
+The model is, sadly, quite awful. It has (some) *relative* predictive power, but little in the way of *absolute* predictive power. Of course, this is fairly unsurprising considering the initial assessment showing little correlation.
 
 There are a number of factors, unaccounted for, which could also be useful features or constraints -- sales, promoted products, and the enormous list of user preferences. If I had more time to scrape additional features, the rating of each product, the reviews/sentiment of reviews, and whether the item is discounted in price would likely be the best next choice for predictive features to add to the model. Whether or not shipping takes more than a few days could also be an important factor.
 
@@ -659,7 +658,7 @@ If a larger dataset of items and features were available, I would look further a
 
 
 <a name="Docs"/>
-<h4>Documentation</h4>
+### Documentation
 
 The source code and necessary data files may all be downloaded as a zip, forked, or cloned on a local machine from this repository.
 
@@ -672,17 +671,16 @@ The files included are in this repository are:
 - **camping_words.txt**: list of camping words used to determine item description relevancy
 - **ResultsTable.pickle**: pickle of results, used for static analysis
 
-<br />
 
-This Python code was written using Python 2.7 and Numpy 1.10.4, but should be compatible with many other versions. The user may have to install the html, urllib2, fuzzy, or cookielib libraries. If the user has Python and the necessary packages installed, no further installation should be required to run the code. 
+This Python code was written using Python 2.7 and Numpy 1.10.4, but should be compatible with many other versions. The user may have to install the html, urllib2, fuzzy, or cookielib libraries. If the user has Python and the necessary packages installed, no further installation should be required to run the code.
 
-The search queries for this analysis were done through [eBay](http://www.eBay.com).<br />
+The search queries for this analysis were done through [eBay](http://www.eBay.com).
 
 
 <br />
 
 <a name="Other"/>
-<h4>Other Information</h4>
+### Other Information
 
 Contributors: RWK <br />
 License: None, free to use and edit as/if people wish. <br />
