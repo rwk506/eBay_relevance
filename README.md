@@ -1,14 +1,16 @@
 
 
+# eBay Product Search Rankings
 
-## An Analysis of eBay Search Rankings
+### An exploration of eBay search results and listing characteristics ###
+
+![jpeg](output_4_0.jpe)
 
 The goal of this short project was to explore some of the characteristics of search listings on eBay and determine whether the description of the objects (among other variables) affected the order of the search results.
 
 I used a search of "blue 4 person tent waterproof" as my test case. This is something outside of my usual eBay user profile (I don't recall ever having searched for camping gear on eBay before). The line of reasoning is that the preferences for this category of items may be less affected by my user history/affinities and more by the characteristics of the products themselves.
 
-
-![jpeg](output_4_0.jpe)
+</br>
 
 
 
@@ -145,7 +147,7 @@ def lookup_description(result, n=5):
 ```
 
  
-
+</br>
  
 Last, there is a piece of code that uses fuzzy matching to determine how many "relevant" camping words are present in the item description. This is, of course, somewhat arbitrary and subjective based on the list of "camping words" that I googled. Nevertheless, it should give some idea of whether item descriptions are focused on the product and the experience it advertises.
 
@@ -169,7 +171,7 @@ def get_camping_relevance(res):
 ```
 
  
-
+</br></br>
 ### Extracting/cleaning the data 
 
 All right, now the access to the data is all set up -- let's get into it. 
@@ -318,7 +320,7 @@ DF.head()
 
 
  
-
+</br></br>
 ### Exploratory Analysis
 
  
@@ -340,7 +342,7 @@ plt.show()
 
 ![png](output_27_0.png)
 
-
+</br>
  
 At first glance, I found it fascinating that the price appears bimodal. Looking at the very few products above $250, it appears from the descriptions that perhaps they are intended for more than four people or for modifying SUVs. Being larger in size/more complex, the tents naturally would cost more. Nothing else is unusual or unique about this small set of more expensive products.
 
@@ -360,7 +362,7 @@ The descriptions of these expensive products, below:
      'sportz full size suv 82000 tentmodel 82000 mnufacturer napier the sportz suv 82000 tent quickly transforms your cuv suv or minivan into a comfortable home away from home no more having to unzip and zip tent doors and open and close vehicle doors to get something you need from your vehicle ',
      'the sportz suv tent 82000 quickly transforms your suv cuv or minivan into a comfortable home away from home no more having to run back and forth to the car to grab your adventure supplies keep your tent in the back of your vehicle and be ready for anything because you cant always predict when youll hear the call of the wild ']
 
-
+</br>
 
  
 
@@ -482,7 +484,7 @@ DF.corr()
 </table>
 </div>
 
-
+</br>
 
 The initial look at the data shows very weak correlations between the features and the order of the results. The ranking of each product seems to certainly be affected by price, with more expensive products being placed further down the list. This could be related to my particular affinity on eBay towards lower price points.
 
@@ -493,7 +495,7 @@ As predicted, the seller rating has very little effect on the ranking. Again, be
 While relevance is correlated to length (clearly lengthier descriptions have more room for relevant camping vocabulary), it does not appear to affect the ranking. This is somewhat disappointing, as I was hoping this would be a indicator of appeal to the consumer, as well as a possible method by which sellers could improve their search result rankings.
 
  
-
+</br></br>
 ### A Brief Model
 
 Now, to pull together a rough model from these features, I use a ridge L2 classifier. This allows for multi-variate classification and weighting of the feature coefficients relative to their importance (with weaker features being penalized in a relative way). Correlated features will have similar coefficients.
@@ -634,7 +636,7 @@ xlabel('Predicted Rank'); ylabel('Actual Rank')
 
 ![png](output_41_1.png)
 
-
+</br>
  
 
 The model is, sadly, quite awful. It has some *relative* predictive power, but little in the way of *absolute* predictive power. Of course, this is fairly unsurprising considering the initial assessment showing little correlation.
@@ -646,9 +648,3 @@ I was interested if the ranking was sensitive to the description's relevance to 
 If a larger dataset of items and features were available, I would look further at whether the relevance was related to the frequency or time spent looking at a particual product and its ranking, taking into account the customer's history of purchase frequency, price point, etc. If time allows, I would like to repeat this analysis for varying search queries to compare the results.
 
 
- 
-
-
-```python
-
-```
