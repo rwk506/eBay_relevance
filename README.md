@@ -642,13 +642,13 @@ xlabel('Predicted Rank'); ylabel('Actual Rank')
 
 ![png](output_41_1.png)
 
+The model is, sadly, quite awful. It has (some) *relative* predictive power, but little in the way of *absolute* predictive power. Of course, this is fairly unsurprising considering the initial assessment showing little correlation. There may be some user-related affinities coming into play here that complicate things, although I was hoping that my lack of search history with camping gear would minimize this. If this is the case, and the product search order is largely driven by collaborative filtering rather than content filtering, that could explain the (lack of) clear results from this analysis.
+
 </br>
  
  
 <a name="Thoughts"/>
 ### Final Thoughts
-
-The model is, sadly, quite awful. It has (some) *relative* predictive power, but little in the way of *absolute* predictive power. Of course, this is fairly unsurprising considering the initial assessment showing little correlation. There may be some user-related affinities coming into play here that complicate things, although I was hoping that my lack of search history with camping gear would minimize this. If this is the case, and the product search order is largely driven by collaborative filtering rather than content filtering, that could explain the (lack of) clear results from this analysis.
 
 There are a number of factors, unaccounted for, which could also be useful features or constraints -- sales, promoted products, and the enormous list of user preferences. If I had more time to scrape additional features, the rating of each product, the reviews/sentiment of reviews, and whether the item is discounted in price would likely be the best next choice for predictive features to add to the model. Whether or not shipping costs (and how much) as well as the timeframe for delivery could also be an intruiguing factors to consider.
 
