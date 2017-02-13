@@ -1,58 +1,11 @@
 
 
-```python
-#### Set up markdown style
-from IPython.core.display import HTML
-HTML("""
-<style>
 
-div.text_cell_render { /* Customize text cells */
-font-family: 'Times New Roman';
-font-size:1.1em;
-line-height:1.2em;
-padding-left:.2em;
-padding-right:1em;
-}
-</style>
-""")
-```
-
-
-
-
-
-<style>
-
-div.text_cell_render { /* Customize text cells */
-font-family: 'Times New Roman';
-font-size:1.1em;
-line-height:1.2em;
-padding-left:.2em;
-padding-right:1em;
-}
-</style>
-
-
-
-
- 
-
-## A Simple Analysis of Search Rankings
+## An Analysis of eBay Search Rankings
 
 The goal of this short project was to explore some of the characteristics of search listings on eBay and determine whether the description of the objects (among other variables) affected the order of the search results.
 
 I used a search of "blue 4 person tent waterproof" as my test case. This is something outside of my usual eBay user profile (I don't recall ever having searched for camping gear on eBay before). The line of reasoning is that the preferences for this category of items may be less affected by my user history/affinities and more by the characteristics of the products themselves.
-
-
- 
-
-
-```python
-from IPython.display import Image
-Image(filename='./tent.jpeg')
-```
-
-
 
 
 ![jpeg](output_4_0.jpe)
