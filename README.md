@@ -659,9 +659,7 @@ I was interested if the ranking was sensitive to the description's relevance to 
 
 If a larger dataset of items and features were available, I would look further at whether the relevance was related to the frequency or time spent looking at a particual product and its ranking, taking into account the customer's history of purchase frequency, price point, etc. If time allows, I would like to repeat this analysis for varying search queries to compare the results.
 
-
-
-</br></br>
+</br>
 
 
 
@@ -680,22 +678,14 @@ The files included are in this repository are:
 - **camping_words.txt**: list of camping words used to determine item description relevancy
 - **ResultsTable.pickle**: pickle of results, used for static analysis
 
-If the user has Python and the necessary packages installed, no further installation should be required to run the code. If scripted, code may be run from outside Python with the command-line call 'python example.py' (where example is the name of the script). If inside Python, the functions lookup\_barcode() may be called following importing the necessary packages and:
+<br />
 
-    import HackHTML.py as HH  ### import python code
-    HH.lookup_barcode()  ### function call
+This Python code was written using Python 2.7 and Numpy 1.10.4, but should be compatible with many other versions. The user may have to install the html, urllib2, fuzzy, or cookielib libraries. If the user has Python and the necessary packages installed, no further installation should be required to run the code. 
+
+The search queries for this analysis were done through [eBay](http://www.eBay.com).<br />
 
 
 <br />
-
-The search queries for this analysis were done through [eBay](http://www.eBay.com)<br />
-
-This Python code was written using Python 2.7 and Numpy 1.10.4, but should be compatible with many other versions. The user may have to install the html, urllib2, fuzzy, or cookielib libraries.
-
-
-
-
-<br /> <br /><br />
 
 <a name="Other"/>
 <h4>Other Information</h4>
