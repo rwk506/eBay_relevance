@@ -510,7 +510,7 @@ While relevance is correlated to length (clearly lengthier descriptions have mor
 <a name="Model"/>
 ### A Brief Model
 
-Now, to pull together a rough model from these features, I use a ridge L2 classifier. This allows for multi-variate classification and weighting of the feature coefficients relative to their importance (with weaker features being penalized in a relative way). Correlated features will have similar coefficients.
+Now, to pull together a rough model from these features, I use a ridge L2 classifier. This allows for multi-variate regression and weighting of the feature coefficients relative to their importance (with weaker features being penalized in a relative way). Correlated features will have similar coefficients.
 
 The main benefit of this approach (aside from accounting for multicollinearity) is that the model will likely be more stable and less affected by small changes in the data (thereby also avoiding overfitting). My favorite part about this approach is that the results remain easily interpretable, unlike other possible model choices.
 
@@ -644,13 +644,15 @@ xlabel('Predicted Rank'); ylabel('Actual Rank')
 </br>
  
 
-The model is, sadly, quite awful. It has (some) *relative* predictive power, but little in the way of *absolute* predictive power. Of course, this is fairly unsurprising considering the initial assessment showing little correlation.
+The model is, sadly, quite awful. It has (some) *relative* predictive power, but little in the way of *absolute* predictive power. Of course, this is fairly unsurprising considering the initial assessment showing little correlation. There may be some user-related affinities coming into play here that complicate things, although I was hoping that my lack of search history with camping gear would minimize this. If this is the case, and the product search order is largely driven by collaborative filtering rather than content filtering, that could explain the (lack of) clear results from this analysis.
 
-There are a number of factors, unaccounted for, which could also be useful features or constraints -- sales, promoted products, and the enormous list of user preferences. If I had more time to scrape additional features, the rating of each product, the reviews/sentiment of reviews, and whether the item is discounted in price would likely be the best next choice for predictive features to add to the model. Whether or not shipping takes more than a few days could also be an important factor.
+There are a number of factors, unaccounted for, which could also be useful features or constraints -- sales, promoted products, and the enormous list of user preferences. If I had more time to scrape additional features, the rating of each product, the reviews/sentiment of reviews, and whether the item is discounted in price would likely be the best next choice for predictive features to add to the model. Whether or not shipping costs (and how much) as well as the timeframe for delivery could also be an intruiguing factors to consider.
 
-I was interested if the ranking was sensitive to the description's relevance to the category -- clearly it is not. However, if it had been, it could help sellers modify minor things like word choice to gain a better place for their products in rankings.
+I was interested if the ranking was sensitive to the description's relevance to the category -- clearly it is not under the study's constraints. However, if it had been, it could be something to help sellers modify minor things like word choice to gain a better place for their products in rankings.
 
-If a larger dataset of items and features were available, I would look further at whether the relevance was related to the frequency or time spent looking at a particual product and its ranking, taking into account the customer's history of purchase frequency, price point, etc. If time allows, I would like to repeat this analysis for varying search queries to compare the results.
+If a larger dataset of items and features were available, I would look further at whether the relevance was related to the frequency or time a user spent looking at a particual product and its ranking, taking into account the customer's history of purchase frequency, price point, etc.
+
+If time allows, I would like to repeat this analysis for varying search queries to compare the results. This could give more insight into whether user preferences are affecting the results or if the lack of correlation between product ranking in the search and the description relevance is consistent for other queries.
 
 </br>
 
