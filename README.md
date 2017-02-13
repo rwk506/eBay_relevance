@@ -12,8 +12,17 @@ I used a search of "blue 4 person tent waterproof" as my test case. This is some
 
 </br>
 
+<h4>Table of Contents</h4>
+[Data Acquisition](#Acq)<br /> 
+[Extracting and Cleaning](#Ex+Cl)<br />
+[Exploratory Analysis](#Explore)<br />
+[Simple Model](#Model)<br />
+[Documentation & Resources](#Docs)<br />
+[Other Information](#Other)<br />
 
 
+<br /><br />
+<a name="Acq"/>
 ### Data Acquisition
 
 First, I loaded in some of my usual analysis packages...
@@ -172,6 +181,7 @@ def get_camping_relevance(res):
 
  
 </br></br>
+<a name="Ex+Cl"/>
 ### Extracting/cleaning the data 
 
 All right, now the access to the data is all set up -- let's get into it. 
@@ -321,6 +331,7 @@ DF.head()
 
  
 </br></br>
+<a name="Explore"/>
 ### Exploratory Analysis
 
  
@@ -496,6 +507,7 @@ While relevance is correlated to length (clearly lengthier descriptions have mor
 
  
 </br></br>
+<a name="Model"/>
 ### A Brief Model
 
 Now, to pull together a rough model from these features, I use a ridge L2 classifier. This allows for multi-variate classification and weighting of the feature coefficients relative to their importance (with weaker features being penalized in a relative way). Correlated features will have similar coefficients.
@@ -648,3 +660,71 @@ I was interested if the ranking was sensitive to the description's relevance to 
 If a larger dataset of items and features were available, I would look further at whether the relevance was related to the frequency or time spent looking at a particual product and its ranking, taking into account the customer's history of purchase frequency, price point, etc. If time allows, I would like to repeat this analysis for varying search queries to compare the results.
 
 
+
+</br></br>
+
+
+
+
+<a name="Docs"/>
+<h4>Documentation</h4>
+
+The source code and necessary data files may all be downloaded as a zip, forked, or cloned on a local machine from this repository.
+
+The primary Python scripts included is **eBay_relevance.py**, which is the python code version of the analysis presented in this markdown file. It is also available as a Jupyter Notebook.
+
+The files included are in this repository are:
+
+- **eBay_relevance.py**: primary code that does searching and cross-correlation of databases/ingredients
+- **eBay_relevance.ipynb**: list of IDs for household items in NIH/NLM library
+- **camping.txt**: list of palm oil aliases and derivates
+- **silicates.txt**: list of silicate aliases and derivates
+- **triclosan.txt**: list of triclosan aliases and derivatives
+
+
+If the user has Python and the necessary packages installed, no further installation should be required to run the code. If scripted, code may be run from outside Python with the command-line call 'python example.py' (where example is the name of the script). If inside Python, the functions lookup\_barcode() may be called following importing the necessary packages and:
+
+    import HackHTML.py as HH  ### import python code
+    HH.lookup_barcode()  ### function call
+
+
+
+
+
+
+
+<br /> <br /><br />
+
+<a name="Resources"/>
+<h4>Resources</h4>
+The following websites and databases were used in this project:<br />
+[Android Studio](http://developer.android.com/tools/studio/index.html)<br />
+[Android Barcode Reader](https://github.com/zxing/zxing)<br />
+[Environmental Working Group](http://www.ewg.org/)<br />
+[US Department of Health and Human Services](https://householdproducts.nlm.nih.gov)<br />
+[UPC Lookup Database](http://www.upcitemdb.com/)<br />
+[NASA Worldview](https://worldview.earthdata.nasa.gov/)<br />
+[World Wildlife Federation](http://www.worldwildlife.org/)<br />
+[Environmental Protection Agency](http://www.epa.gov/)<br />
+
+
+<br /> <br /><br />
+
+<a name="Docs"/>
+<h4>Dependencies</h4>
+
+This Python code was written using Python 2.7 and Numpy 1.10.4, but should be compatible with many other versions. The user may have to install the html, urllib2, re, or cookielib libraries.
+
+Compatible with iPython Notebook (use %run [name]).
+
+
+
+
+<br /> <br /><br />
+
+<a name="Other"/>
+<h4>Other Information</h4>
+
+Contributors: RWK, TD, KA, WM <br />
+Contact: May be made through GitHub. <br />
+About the creators: We are a group of PhD Astro students at the University of Florida. We look at all sorts of stars and galaxies in the Universe across space and time. However, we know that nothing is as important as our Earth. We are passionate about improving the well-being of our planet and providing people with the power to make everyday choices that make the world cleaner and healthier.
