@@ -675,12 +675,10 @@ The primary Python scripts included is **eBay_relevance.py**, which is the pytho
 
 The files included are in this repository are:
 
-- **eBay_relevance.py**: primary code that does searching and cross-correlation of databases/ingredients
-- **eBay_relevance.ipynb**: list of IDs for household items in NIH/NLM library
-- **camping.txt**: list of palm oil aliases and derivates
-- **silicates.txt**: list of silicate aliases and derivates
-- **triclosan.txt**: list of triclosan aliases and derivatives
-
+- **eBay_relevance.py**: primary code that does searching, scraping, cleaning, and analysis
+- **eBay_relevance.ipynb**: same as previous, in Jupyter Notebook version
+- **camping_words.txt**: list of camping words used to determine item description relevancy
+- **ResultsTable.pickle**: pickle of results, used for static analysis
 
 If the user has Python and the necessary packages installed, no further installation should be required to run the code. If scripted, code may be run from outside Python with the command-line call 'python example.py' (where example is the name of the script). If inside Python, the functions lookup\_barcode() may be called following importing the necessary packages and:
 
@@ -688,34 +686,11 @@ If the user has Python and the necessary packages installed, no further installa
     HH.lookup_barcode()  ### function call
 
 
+<br />
 
+The search queries for this analysis were done through [eBay](http://www.eBay.com)<br />
 
-
-
-
-<br /> <br /><br />
-
-<a name="Resources"/>
-<h4>Resources</h4>
-The following websites and databases were used in this project:<br />
-[Android Studio](http://developer.android.com/tools/studio/index.html)<br />
-[Android Barcode Reader](https://github.com/zxing/zxing)<br />
-[Environmental Working Group](http://www.ewg.org/)<br />
-[US Department of Health and Human Services](https://householdproducts.nlm.nih.gov)<br />
-[UPC Lookup Database](http://www.upcitemdb.com/)<br />
-[NASA Worldview](https://worldview.earthdata.nasa.gov/)<br />
-[World Wildlife Federation](http://www.worldwildlife.org/)<br />
-[Environmental Protection Agency](http://www.epa.gov/)<br />
-
-
-<br /> <br /><br />
-
-<a name="Docs"/>
-<h4>Dependencies</h4>
-
-This Python code was written using Python 2.7 and Numpy 1.10.4, but should be compatible with many other versions. The user may have to install the html, urllib2, re, or cookielib libraries.
-
-Compatible with iPython Notebook (use %run [name]).
+This Python code was written using Python 2.7 and Numpy 1.10.4, but should be compatible with many other versions. The user may have to install the html, urllib2, fuzzy, or cookielib libraries.
 
 
 
@@ -725,6 +700,7 @@ Compatible with iPython Notebook (use %run [name]).
 <a name="Other"/>
 <h4>Other Information</h4>
 
-Contributors: RWK, TD, KA, WM <br />
+Contributors: RWK <br />
+License: None, free to use and edit as/if people wish. <br />
 Contact: May be made through GitHub. <br />
-About the creators: We are a group of PhD Astro students at the University of Florida. We look at all sorts of stars and galaxies in the Universe across space and time. However, we know that nothing is as important as our Earth. We are passionate about improving the well-being of our planet and providing people with the power to make everyday choices that make the world cleaner and healthier.
+<br />
