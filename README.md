@@ -640,12 +640,6 @@ xlabel('Predicted Rank'); ylabel('Actual Rank')
 
 
 
-
-    <matplotlib.text.Text at 0x11bff0bd0>
-
-
-
-
 ![png](output_41_1.png)
 
 </br>
