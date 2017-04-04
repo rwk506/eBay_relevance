@@ -509,7 +509,7 @@ While relevance is correlated to length (clearly lengthier descriptions have mor
  
 </br>
 <a name="Model"/>
-### A Brief Model
+<h3>A Brief Model</h3>
 
 Now, to pull together a rough model from these features, I use a ridge L2 classifier. This allows for multi-variate regression and weighting of the feature coefficients relative to their importance (with weaker features being penalized in a relative way). Correlated features will have similar coefficients.
 
@@ -648,7 +648,7 @@ The model is, sadly, quite awful. It has (some) *relative* predictive power, but
  
  
 <a name="Thoughts"/>
-### Final Thoughts
+<h3>Final Thoughts</h3>
 
 There are a number of factors, unaccounted for, which could also be useful features or constraints -- sales, promoted products, and the enormous list of user preferences. If I had more time to scrape additional features, the rating of each product, the reviews/sentiment of reviews, and whether the item is discounted in price would likely be the best next choice for predictive features to add to the model. Whether or not shipping costs (and how much) as well as the timeframe for delivery could also be an intruiguing factors to consider.
 
@@ -664,7 +664,7 @@ If time allows, I would like to repeat this analysis for varying search queries 
 
 
 <a name="Docs"/>
-### Documentation
+<h3>Documentation</h3>
 
 The source code and necessary data files may all be downloaded as a zip, forked, or cloned on a local machine from this repository.
 
@@ -686,7 +686,7 @@ The search queries for this analysis were done through [eBay](http://www.eBay.co
 <br />
 
 <a name="Other"/>
-### Other Information
+<h3>Other Information</h3>
 
 Contributors: RWK <br />
 License: None, free to use and edit as/if people wish. <br />
